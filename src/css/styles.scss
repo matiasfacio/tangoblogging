@@ -1,0 +1,445 @@
+@import "variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: $mycolor;
+}
+
+button#readMore {
+  font-size: 1rem;
+  max-width: 140px;
+  border: 1px black solid;
+  &:hover {
+    background-color: black;
+    color: $mycolor;
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  display: inline-block;
+  max-width: 100px;
+  &:hover {
+    color: black;
+    background-color: crimson;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: monospace;
+  letter-spacing: -2px;
+}
+
+nav {
+  z-index: 99;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  align-items: center;
+  background-color: $mycolor;
+  border-bottom: 3px crimson solid;
+  width: 100%;
+  ul {
+    display: flex;
+    list-style: none;
+    padding-left: 50px;
+    a {
+      text-decoration: none;
+      font-size: 1.3vmax;
+      margin-right: 10px;
+      color: black;
+      background-color: white;
+      border-radius: 10px;
+      &:hover {
+        background-color: black;
+        color: $mycolor;
+        cursor: pointer;
+      }
+    }
+    input {
+      padding: 5px 10px;
+      max-width: 150px;
+      color: rgba($color: #000000, $alpha: 0.5);
+      border-radius: 10px;
+      // transform: translateY(10px);
+      &:focus {
+        text-decoration: none;
+        outline: none;
+        background-color: none;
+      }
+    }
+    #button_log_out {
+      border: none;
+      background-color: white;
+      padding: 5px 10px;
+      margin-right: 10px;
+      font-size: 1.3vmax;
+      cursor: pointer;
+      &:hover {
+        background: black;
+        color: white;
+      }
+    }
+  }
+  .title {
+    padding-right: 50px;
+    color: black;
+  }
+}
+
+header {
+  z-index: -1;
+  background-image: url("../images/charla.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 40% center;
+  height: 60vh;
+  border: 3px black solid;
+  overflow: hidden;
+  .text_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: auto;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    color: white;
+    font-size: clamp(30px, 8vw, 90px);
+    font-weight: bolder;
+    transform: rotateZ(-20deg);
+    border: 10px rgb(175, 175, 175) solid;
+    outline: 10px white solid;
+    animation: bringText 1s forwards ease-in-out;
+
+    @keyframes bringText {
+      from {
+        transform: translateX(-100vw) rotateZ(-1200deg);
+      }
+      to {
+        transform: translateX(0vw rotateZ(1480deg));
+      }
+    }
+  }
+}
+
+section {
+  margin-top: 50px;
+  padding: 50px;
+}
+
+section#one {
+  h2 {
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1100px;
+    justify-content: space-around;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding-right: 20px;
+    button#delete,
+    button#edit {
+      width: 70px;
+      display: inline-block;
+      padding: 5px 10px;
+      margin-left: 10px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      &:hover {
+        background-color: black;
+        color: crimson;
+      }
+      a {
+        background-color: crimson;
+      }
+    }
+    .card_title {
+      font-size: 1.5rem;
+      color: black;
+      font-weight: bolder;
+      padding: 30px 0px;
+      position: relative;
+      text-transform: uppercase;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      &::before {
+        content: url("../images/all_out-24px.svg");
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        transform: translate(-30px, -2px);
+      }
+    }
+    .snippet {
+      font-size: 1.2rem;
+      padding-left: 0px;
+      color: black;
+      font-weight: 500;
+      &::before {
+        position: absolute;
+        content: "*";
+        transform: translateX(-10px);
+      }
+    }
+    .card_text {
+      padding: 30px 0;
+    }
+    .update {
+      padding: 10px 0px;
+    }
+    &:hover {
+      .card_title {
+        color: crimson;
+      }
+    }
+  }
+}
+
+section#two {
+  margin: 50px auto;
+  .lastEntry {
+    max-width: 600px;
+    margin: 0px auto;
+    .lastEntry_title {
+      font-weight: bolder;
+      font-size: 2rem;
+    }
+    .card_title {
+      font-size: 1.5rem;
+      color: black;
+      font-weight: bolder;
+      padding: 30px 0px;
+      position: relative;
+      text-transform: uppercase;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      &::before {
+        content: url("../images/all_out-24px.svg");
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        transform: translate(-30px, -2px);
+      }
+    }
+    .snippet {
+      font-size: 1.2rem;
+      padding-left: 0px;
+      color: black;
+      font-weight: 500;
+      &::before {
+        position: absolute;
+        content: "-";
+        transform: translateX(-10px);
+      }
+    }
+    .card_text {
+      padding: 30px 0;
+    }
+    .update {
+      padding: 10px 0px;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 3px crimson solid;
+  background-color: black;
+  p {
+    font-size: 1.2rem;
+    color: white;
+  }
+  a {
+    max-width: 250px !important;
+    color: white;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  textarea {
+    min-height: 400px;
+    max-width: 600px;
+    font-size: 1.1rem;
+  }
+  input {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  button {
+    font-size: 1.1rem;
+    max-width: 100px;
+    margin: 30px 0;
+  }
+  label {
+    padding: 10px 0;
+  }
+}
+
+.page_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.displaySearchEntry {
+  max-width: 800px;
+  margin: 50px auto;
+  button#delete,
+  button#edit {
+    width: 70px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: black;
+      color: crimson;
+    }
+  }
+  .oneEntry {
+    padding: 30px;
+    .oneEntryBody {
+      padding-top: 30px;
+      color: rgba($color: #000000, $alpha: 0.5);
+      &::first-line {
+        padding-left: 30px;
+      }
+    }
+    .oneEntryTitle {
+      color: crimson;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+  }
+  #readMore {
+    margin-top: 10px;
+  }
+}
+
+#nothingHere {
+  padding: 50px;
+}
+
+.oneEntry {
+  margin: 40px auto;
+  min-height: 50vh;
+  width: 800px;
+  button#delete,
+    button#edit {
+      width: 70px;
+      display: inline-block;
+      padding: 5px 10px;
+      margin-left: 10px;
+      margin-top: 50px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      &:hover {
+        background-color: black;
+        color: crimson;
+      }
+    }
+  .oneEntryTitle {
+    padding: 20px 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .oneEntryBody {
+    padding-top: 30px;
+    &::first-line {
+      padding-left: 30px;
+    }
+  }
+  .oneEntrySnippet {
+    font-size: 1.2rem;
+    padding-left: 0px;
+    color: black;
+    font-weight: 500;
+    &::before {
+      position: absolute;
+      content: "-";
+      transform: translateX(-10px);
+    }
+  }
+  button#readMore {
+    width: 70px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: black;
+      color: crimson;
+    }
+    a {
+      background-color: crimson;
+    }
+  }
+}
+
+.loggingIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  min-height: 70vh;
+}
+
+.logout_container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    padding: 5px 10px;
+  }
+}
+
+.not_loggedin_yet {
+  margin-top: 40px;
+}
+
+.new_entry_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  form {
+    min-width: 600px !important;
+  }
+}
